@@ -7,13 +7,14 @@ namespace :setup do
   end
 
   task :git do
-    sh 'git submodule init && git submodule update'
+    puts "Updating git submodules"
+    `git submodule init && git submodule update`
   end
 
   task :bundler => :chdir do
-    sh 'gem install bundler --no-ri --no-rdoc' unless %x[gem list] =~ /^bundler/
+    `gem install bundler --no-ri --no-rdoc` unless %x[gem list] =~ /^bundler/
     puts "Running bundle install"
-    output = %x[bundle install]
+    `bundle install`
   end
 
   task :config => :chdir do
@@ -27,11 +28,12 @@ namespace :setup do
   end
 
   task :presentation => :chdir do
-    sh 'cd presentation && npm install'
+    puts "Running npm install in the presentation directory"
+    `cd presentation && npm install`
   end
 
   task :spec => :chdir do
-    sh 'rake spec'
+    system 'rake spec'
   end
 
 end
