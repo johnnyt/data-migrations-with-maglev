@@ -1,0 +1,17 @@
+{
+	"name": "data-migrations-with-maglev",
+	"author": "JohnnyT",
+	"description": "Data Migrations With MagLev",
+  "version": "0.0.1",
+	"repository": {
+		"type": "git",
+		"url": "git://github.com/johnnyt/data-migrations-with-maglev.git"
+	},
+	"engines": {
+		"node": "~0.6.8"
+	},
+	"dependencies": {
+		"grunt" : "latest",
+		"grunt-exec" : "latest"
+	}
+}

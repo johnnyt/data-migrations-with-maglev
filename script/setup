@@ -1,0 +1,7 @@
+#!/usr/bin/env ruby
+# This will execute 'rake setup' without loading the app environment
+
+require 'rake'
+load File.expand_path("../../lib/tasks/setup.rake", __FILE__)
+
+Rake::Task[:setup].invoke

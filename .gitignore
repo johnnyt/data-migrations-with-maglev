@@ -1,0 +1,12 @@
+.DS_Store
+.bundle
+.env
+.foreman
+.yardoc
+*.swp
+*.log
+config/*.yml
+log
+presentation/node_modules
+tmp
+!.gitkeep

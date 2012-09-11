@@ -1,0 +1,3 @@
+[submodule "presentation/amber"]
+	path = presentation/amber
+	url = https://github.com/NicolasPetton/amber.git
