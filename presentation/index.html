@@ -41,17 +41,26 @@
           <h2>Presentation Overview</h2>
           <p class="fragment">What is MagLev?</p>
           <p class="fragment">MagLev SysAdmin, info, status, benchmarks</p>
-          <p class="fragment">Build, populate and migrate a sample domain</p>
+          <p class="fragment">Examples</p>
         </section>
 
         <section>
           <section>
             <h2>What is MagLev?</h2>
-            <ul>
-              <li class="fragment">MagLev.is_a?(:Ruby)</li>
-              <li class="fragment">MagLev.is_a?(:Smalltalk)</li>
-              <li class="fragment">Shared transactional object space</li>
-            </ul>
+            <p>Ruby that runs on top of GemStone/S</p>
+            <p>MagLev 1.0.0 was released on October 31, 2011</p>
+            <!-- <ul> -->
+            <!--   <li class="fragment">MagLev.is_a?(:Ruby)</li> -->
+            <!--   <li class="fragment">MagLev.is_a?(:Smalltalk)</li> -->
+            <!--   <li class="fragment">Shared transactional object space</li> -->
+            <!-- </ul> -->
+          </section>
+
+          <section>
+            <h2>What is GemStone/S?</h2>
+            <p>Dialect of Smalltalk</p>
+            <p class="fragment">~ 30 years old</p>
+            <p class="fragment">Shared transactional object space</p>
           </section>
 
           <section>
@@ -68,7 +77,6 @@
 
         <section>
           <h2>MagLev Examples</h2>
-          <p>Blog</p>
           <p>Blog</p>
         </section>
 
@@ -175,7 +183,7 @@ definitions/precise64/
       Reveal.initialize({
         controls: true,
         progress: true,
-        history: true,
+        history: false,
         keyboard: true,
 
         transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/linear(2d)
