@@ -32,58 +32,104 @@
 
       <div class="slides">
         <section>
-          <h1>Data Migration</h1>
-          <h4>with</h4>
-          <h1>MagLev</h1>
+          <section>
+            <h1>Data Migration</h1>
+            <h4>with</h4>
+            <h1>MagLev</h1>
+          </section>
+
+          <section>
+            <h2>Presentation Overview</h2>
+            <p class="fragment">What is MagLev?</p>
+            <p class="fragment">MagLev SysAdmin, info, status, benchmarks</p>
+            <p class="fragment">Examples</p>
+          </section>
         </section>
 
         <section>
-          <h2>Presentation Overview</h2>
-          <p class="fragment">What is MagLev?</p>
-          <p class="fragment">MagLev SysAdmin, info, status, benchmarks</p>
-          <p class="fragment">Examples</p>
+          <section>
+            <h2>What is MagLev?</h2>
+            <p>Ruby that ...</p>
+            <p class="fragment">runs on top of GemStone/S</p>
+            <p class="fragment">is pretty young - MagLev 1.0.0 was released on October 31, 2011</p>
+            <!-- <ul> -->
+            <!--   <li class="fragment">MagLev.is_a?(:Ruby)</li> -->
+            <!--   <li class="fragment">MagLev.is_a?(:Smalltalk)</li> -->
+            <!--   <li class="fragment">Shared transactional object space</li> -->
+            <!-- </ul> -->
+          </section>
+
+          <section>
+            <h2>What is GemStone/S?</h2>
+            <p>Dialect of Smalltalk</p>
+            <p class="fragment">~ 30 years old</p>
+            <p class="fragment">Shared transactional object space</p>
+          </section>
+
+          <section>
+            <p><code>rvm install maglev</code></p>
+            <ul>
+              <li class="fragment">Setup shared memory in <code>/etc/sysctl.conf</code></li>
+              <li class="fragment">Add NetLDI port to <code>/etc/services</code></li>
+              <li class="fragment">Download GemStone/S</li>
+              <li class="fragment">Create new Stone</li>
+              <li class="fragment">File in Ruby</li>
+            </ul>
+          </section>
         </section>
 
         <section>
-          <h2>What is MagLev?</h2>
-          <p>Ruby that ...</p>
-          <p class="fragment">runs on top of GemStone/S</p>
-          <p class="fragment">is pretty young - MagLev 1.0.0 was released on October 31, 2011</p>
-          <!-- <ul> -->
-          <!--   <li class="fragment">MagLev.is_a?(:Ruby)</li> -->
-          <!--   <li class="fragment">MagLev.is_a?(:Smalltalk)</li> -->
-          <!--   <li class="fragment">Shared transactional object space</li> -->
-          <!-- </ul> -->
+          <section>
+            <h2>SysAdmin, status</h2>
+          </section>
         </section>
 
         <section>
-          <h2>What is GemStone/S?</h2>
-          <p>Dialect of Smalltalk</p>
-          <p class="fragment">~ 30 years old</p>
-          <p class="fragment">Shared transactional object space</p>
-        </section>
+          <section>
+            <h2>MagLev Examples</h2>
+            <p>WebTools</p>
+            <p>Blog Example</p>
+            <p>Point Example</p>
+          </section>
 
-        <section>
-          <p><code>rvm install maglev</code></p>
-          <ul>
-            <li class="fragment">Setup shared memory in <code>/etc/sysctl.conf</code></li>
-            <li class="fragment">Add NetLDI port to <code>/etc/services</code></li>
-            <li class="fragment">Download GemStone/S</li>
-            <li class="fragment">Create new Stone</li>
-            <li class="fragment">File in Ruby</li>
-          </ul>
-        </section>
+          <section>
+            <h2>WebTools</h2>
+            <p>Run <code>./script/webtools</code></p>
+            <p>Open <a href="http://localhost:9292/webtools" target="_blank">http://localhost:9292/webtools</a></p>
+          </section>
 
-        <section>
-          <h2>WebTools</h2>
-          <p>Run <code>./script/webtools</code></p>
-          <p>Open <a href="http://localhost:9292/webtools" target="_blank">http://localhost:9292/webtools</a></p>
-        </section>
+          <section>
+            <h2>Blog Example</h2>
+            <p><a href="https://github.com/MagLev/maglev/blob/master/examples/persistence/migrations/example/example.rdoc" target="_blank">README</a></p>
 
-        <section>
-          <h2>MagLev Examples</h2>
-          <p><a href="https://github.com/MagLev/maglev/blob/master/examples/persistence/migrations/example/example.rdoc" target="_blank">Blog Example</a></p>
-          <p><a href="https://github.com/MagLev/maglev/tree/master/examples/persistence/migrations/example2" target="_blank">Point Example</a></p>
+            <p>Rake tasks</p>
+            <pre><code style="margin-top: 20px;">
+rake blog:clean      # Remove the BlogPost class and instances
+rake blog:client10   # Run the client app verion 10.
+rake blog:client11   # Run the client app verion 11.
+rake blog:client111  # Run the client app verion 111.
+rake blog:inspect    # Inspect the current blog posts
+rake blog:migrate    # Run the 1.0 to 1.1 migration script.
+rake blog:post10     # Install version 10 of the BlogPost app.
+rake blog:post11     # Install version 11 of the BlogPost app.
+rake blog:write1     # Write blog posts for version 1.
+rake blog:write2     # Write blog posts for version 2.
+            </code></pre>
+          </section>
+
+          <section>
+            <h2>Point Example</h2>
+            <p><a href="https://github.com/MagLev/maglev/tree/master/examples/persistence/migrations/example2" target="_blank">README</a></p>
+
+            <p>Scripts</p>
+            <pre><code style="margin-top: 20px;">
+addpoints  # Adds new points to the persistent collection
+app        # Our "application" class that uses points
+install    # Installs a version of the Point class
+reset      # Cleans out the Point class and instances
+showpoints # Show info on the current Point class and points.
+            </code></pre>
+          </section>
         </section>
 
         <section>
@@ -123,7 +169,7 @@
       Reveal.initialize({
         controls: true,
         progress: true,
-        history: false,
+        history: true,
         keyboard: true,
 
         transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/linear(2d)
