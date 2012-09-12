@@ -1,0 +1,17 @@
+#!/usr/bin/env maglev-ruby
+webtools_path = File.expand_path("../webtools", File.dirname(__FILE__))
+$LOAD_PATH.unshift("#{webtools_path}/lib")
+require 'rubygems'
+require 'rack'
+require 'web_tools'
+
+app = Rack::Builder.new do
+  WebTools::UI.set :root, webtools_path
+  ui = WebTools::UI.new
+  redirect = proc { |env| [301,
+                    {'Content-Type' => 'text/html', 'Location' => '/webtools/'},
+                    '<a href="/webtools">Moved permanently</a>'] }
+  map('/webtools/') { run ui }
+  map('/') { run redirect }
+end
+Rack::Handler.default.run(app, :Port => 9292)

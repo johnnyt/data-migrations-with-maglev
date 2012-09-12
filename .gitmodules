@@ -1,3 +1,6 @@
 [submodule "presentation/amber"]
 	path = presentation/amber
 	url = https://github.com/NicolasPetton/amber.git
+[submodule "webtools"]
+	path = webtools
+	url = https://github.com/MagLev/webtools.git

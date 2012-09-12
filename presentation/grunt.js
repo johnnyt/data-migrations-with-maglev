@@ -2,7 +2,7 @@ module.exports = function(grunt) {
 
   grunt.loadNpmTasks('grunt-exec');
 
-  grunt.registerTask('default', 'amber concat');
+  grunt.registerTask('default', 'concat');
 
   grunt.initConfig({
     amber: {
@@ -12,22 +12,22 @@ module.exports = function(grunt) {
       'js/app.js': [
         'lib/js/jquery-1.7.min.js',
         'lib/js/handlebars.js',
-        'lib/js/reveal.min.js',
+        'lib/js/reveal.min.js'
         // Amber IDE dependencies
-        'amber/js/lib/jQuery/jquery-ui-1.8.16.custom.min.js',
-        'amber/js/lib/jQuery/jquery.textarea.js',
-        'amber/js/lib/CodeMirror/codemirror.js',
-        'amber/js/lib/CodeMirror/smalltalk.js',
-        'lib/js/amber.compiled.js'
+        // 'amber/js/lib/jQuery/jquery-ui-1.8.16.custom.min.js',
+        // 'amber/js/lib/jQuery/jquery.textarea.js',
+        // 'amber/js/lib/CodeMirror/codemirror.js',
+        // 'amber/js/lib/CodeMirror/smalltalk.js',
+        // 'lib/js/amber.compiled.js'
       ],
       'css/app.css': [
         'css/main.css',
         'css/theme/default.css',
-        'lib/css/zenburn.css',
-        'amber/css/amber.css',
-        'amber/js/lib/CodeMirror/codemirror.css',
-        'amber/js/lib/CodeMirror/amber.css',
-        'lib/css/amber-overrides.css'
+        'lib/css/zenburn.css'
+        // 'amber/css/amber.css',
+        // 'amber/js/lib/CodeMirror/codemirror.css',
+        // 'amber/js/lib/CodeMirror/amber.css',
+        // 'lib/css/amber-overrides.css'
       ]
     }
   });

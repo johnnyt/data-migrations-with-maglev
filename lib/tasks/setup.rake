@@ -1,5 +1,5 @@
 desc 'Setup the local environment'
-task :setup => %w[ setup:git setup:bundler setup:config setup:presentation setup:spec ]
+task :setup => %w[ setup:git setup:bundler setup:symlinks setup:config setup:presentation ]
 
 namespace :setup do
   task :chdir do
@@ -8,13 +8,20 @@ namespace :setup do
 
   task :git do
     puts "Updating git submodules"
-    `git submodule init && git submodule update`
+    system "git submodule init && git submodule update"
   end
 
   task :bundler => :chdir do
-    `gem install bundler --no-ri --no-rdoc` unless %x[gem list] =~ /^bundler/
+    system "gem install bundler --no-ri --no-rdoc" unless %x[gem list] =~ /^bundler/
     puts "Running bundle install"
-    `bundle install`
+    system "bundle install"
+  end
+
+  task :symlinks => :chdir do
+    unless File.exists?('examples')
+      puts "Symlinking MagLev migration examples"
+      system "ln -s #{ENV['MAGLEV_HOME']}/examples/persistence/migrations examples"
+    end
   end
 
   task :config => :chdir do
@@ -29,7 +36,12 @@ namespace :setup do
 
   task :presentation => :chdir do
     puts "Running npm install in the presentation directory"
-    `cd presentation && npm install`
+    system "cd presentation && npm install"
+  end
+
+  task :webtools => :chdir do
+    puts "Setting up WebTools"
+    system "cd webtools && bundle install && bundle exec gem pristine rack"
   end
 
   task :spec => :chdir do

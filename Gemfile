@@ -2,9 +2,12 @@ source :rubygems
 
 # Public gems
 gem 'rake'
-gem 'twitter-stream'
+gem 'sinatra'
+
+# gem 'twitter-stream'
 # gem 'fastercsv'
 # gem 'georuby'
+# gem 'guid'
 # gem 'concensus'
 # gem 'activitystreams'
 

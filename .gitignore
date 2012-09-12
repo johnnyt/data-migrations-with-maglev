@@ -6,6 +6,7 @@
 *.swp
 *.log
 config/*.yml
+examples
 log
 presentation/node_modules
 tmp
