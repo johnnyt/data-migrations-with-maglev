@@ -1,7 +1,7 @@
-#!/usr/bin/env ruby
-# This will execute 'rake setup' without loading the app environment
+#!/usr/bin/env bash
 
-require 'rake'
-load File.expand_path("../../lib/tasks/setup.rake", __FILE__)
-
-Rake::Task[:setup].invoke
+git submodule init
+git submodule update
+bundle install
+cd presentation && npm install && cd -
+bundle exec rake setup

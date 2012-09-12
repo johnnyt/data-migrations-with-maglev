@@ -1,5 +1,5 @@
 desc 'Setup the local environment'
-task :setup => %w[ setup:git setup:bundler setup:symlinks setup:config setup:presentation ]
+task :setup => %w[ setup:symlinks ]
 
 namespace :setup do
   task :chdir do
@@ -37,11 +37,6 @@ namespace :setup do
   task :presentation => :chdir do
     puts "Running npm install in the presentation directory"
     system "cd presentation && npm install"
-  end
-
-  task :webtools => :chdir do
-    puts "Setting up WebTools"
-    system "cd webtools && bundle install && bundle exec gem pristine rack"
   end
 
   task :spec => :chdir do

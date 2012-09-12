@@ -2,6 +2,10 @@ source :rubygems
 
 # Public gems
 gem 'rake'
+
+# For WebTools
+gem 'json_pure'
+gem 'rack-contrib'
 gem 'sinatra'
 
 # gem 'twitter-stream'

@@ -1,4 +1,4 @@
-#!/usr/bin/env maglev-ruby
+#!/usr/bin/env ruby
 webtools_path = File.expand_path("../webtools", File.dirname(__FILE__))
 $LOAD_PATH.unshift("#{webtools_path}/lib")
 require 'rubygems'

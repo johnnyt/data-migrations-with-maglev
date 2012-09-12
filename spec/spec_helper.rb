@@ -1,1 +1,1 @@
-require File.expand_path('../config/environment', File.dirname(__FILE__))
+require File.expand_path('../env', File.dirname(__FILE__))
