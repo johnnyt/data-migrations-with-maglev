@@ -45,121 +45,61 @@
         </section>
 
         <section>
-          <section>
-            <h2>What is MagLev?</h2>
-            <p>Ruby that runs on top of GemStone/S</p>
-            <p>MagLev 1.0.0 was released on October 31, 2011</p>
-            <!-- <ul> -->
-            <!--   <li class="fragment">MagLev.is_a?(:Ruby)</li> -->
-            <!--   <li class="fragment">MagLev.is_a?(:Smalltalk)</li> -->
-            <!--   <li class="fragment">Shared transactional object space</li> -->
-            <!-- </ul> -->
-          </section>
+          <h2>What is MagLev?</h2>
+          <p>Ruby that ...</p>
+          <p class="fragment">runs on top of GemStone/S</p>
+          <p class="fragment">is pretty young - MagLev 1.0.0 was released on October 31, 2011</p>
+          <!-- <ul> -->
+          <!--   <li class="fragment">MagLev.is_a?(:Ruby)</li> -->
+          <!--   <li class="fragment">MagLev.is_a?(:Smalltalk)</li> -->
+          <!--   <li class="fragment">Shared transactional object space</li> -->
+          <!-- </ul> -->
+        </section>
 
-          <section>
-            <h2>What is GemStone/S?</h2>
-            <p>Dialect of Smalltalk</p>
-            <p class="fragment">~ 30 years old</p>
-            <p class="fragment">Shared transactional object space</p>
-          </section>
+        <section>
+          <h2>What is GemStone/S?</h2>
+          <p>Dialect of Smalltalk</p>
+          <p class="fragment">~ 30 years old</p>
+          <p class="fragment">Shared transactional object space</p>
+        </section>
 
-          <section>
-            <p><code>rvm install maglev</code></p>
-            <ul>
-              <li class="fragment">Setup shared memory in <code>/etc/sysctl.conf</code></li>
-              <li class="fragment">Add NetLDI port to <code>/etc/services</code></li>
-              <li class="fragment">Download GemStone/S</li>
-              <li class="fragment">Create new Stone</li>
-              <li class="fragment">File in Ruby</li>
-            </ul>
-          </section>
+        <section>
+          <p><code>rvm install maglev</code></p>
+          <ul>
+            <li class="fragment">Setup shared memory in <code>/etc/sysctl.conf</code></li>
+            <li class="fragment">Add NetLDI port to <code>/etc/services</code></li>
+            <li class="fragment">Download GemStone/S</li>
+            <li class="fragment">Create new Stone</li>
+            <li class="fragment">File in Ruby</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>WebTools</h2>
+          <p>Run <code>./script/webtools</code></p>
+          <p>Open <a href="http://localhost:9292/webtools" target="_blank">http://localhost:9292/webtools</a></p>
         </section>
 
         <section>
           <h2>MagLev Examples</h2>
-          <p>Blog</p>
+          <p><a href="https://github.com/MagLev/maglev/blob/master/examples/persistence/migrations/example/example.rdoc" target="_blank">Blog Example</a></p>
+          <p><a href="https://github.com/MagLev/maglev/tree/master/examples/persistence/migrations/example2" target="_blank">Point Example</a></p>
         </section>
 
         <section>
           <h2>Links</h2>
           <ul>
-            <li><a href="http://gemstonesoup.wordpress.com/glossary/">GemStone/S Glossary</a></li>
-            <li><a href="http://community.gemstone.com/download/attachments/6816862/GS64-ReleaseNotes-3.1.0.1.pdf?version=1">GS64 Release Notes</a></li>
-            <li><a href="http://www.stic.st/wp-content/conferences/2012/Tuesday/0915-GemStone64-Green.pdf">GS64 3.1 Presentation</a></li>
-            <li><a href="http://www.slideshare.net/esug/gemstone-update">GS64 Update (2009)</a></li>
-            <li><a href="http://seaside.gemstone.com/docs/GLASS-Pricing-1201.htm">GLASS pricing</a></li>
-            <li><a href="http://forum.world.st/Practical-limits-of-free-license-td3499824.html">Practical limits of free license</a></li>
-            <!-- <li><a href=""></a></li> -->
+            <li><a target="_blank" href="https://github.com/MagLev/maglev/blob/master/examples/persistence/migrations/migrations.org"></a>Smalltalk / Ruby migrations</li>
+            <li><a target="_blank" href="http://gemstonesoup.wordpress.com/glossary/">GemStone/S Glossary</a></li>
+            <li><a target="_blank" href="http://community.gemstone.com/download/attachments/6816862/GS64-ReleaseNotes-3.1.0.1.pdf?version=1">GS64 Release Notes</a></li>
+            <li><a target="_blank" href="http://www.stic.st/wp-content/conferences/2012/Tuesday/0915-GemStone64-Green.pdf">GS64 3.1 Presentation</a></li>
+            <li><a target="_blank" href="http://www.slideshare.net/esug/gemstone-update">GS64 Update (2009)</a></li>
+            <li><a target="_blank" href="http://seaside.gemstone.com/docs/GLASS-Pricing-1201.htm">GLASS pricing</a></li>
+            <li><a target="_blank" href="http://forum.world.st/Practical-limits-of-free-license-td3499824.html">Practical limits of free license</a></li>
             <!-- <li><a href=""></a></li> -->
           </ul>
         </section>
 
-
-        <!--
-        <section>
-          <section>
-            <h2>Build the Box</h2>
-            <pre><code>rake prometheus:build</code></pre>
-            <p>Use Veewee to create the precise64 'basebox'</p>
-            <p>Then use Vagrant and Chef to provision the server</p>
-          </section>
-
-          <section>
-            <pre><code>rake prometheus:create_basebox</code></pre>
-            <p>Use Veewee to create the precise64 'basebox'</p>
-            <p class="fragment">Download VirtualBox Guest Additions</p>
-            <p class="fragment">Download ubuntu-12.04.1-server-amd64.iso</p>
-            <p class="fragment">Pops open a VM window</p>
-            <pre class="fragment"><code style="margin-top: 20px;">
-definitions/precise64/
-  definition.rb
-  postinstall.sh
-            </code></pre>
-          </section>
-
-          <section>
-            <h2>Build the Box</h2>
-            <p>Use Veewee to create the precise64 'basebox'</p>
-            <pre><code>rake prometheus:create_basebox</code></pre>
-            <p>Use Vagrant and Chef to provision the server</p>
-            <p class="fragment">Vagrantfile</p>
-            <p class="fragment">Chef-solo</p>
-            <ul>
-              <li class="fragment">RVM ruby-1.9.2-p290</li>
-              <li class="fragment">Redis</li>
-              <li class="fragment">0MQ</li>
-              <li class="fragment">MongoDB</li>
-              <li class="fragment">Postgres 9.1</li>
-              <li class="fragment">RabbitMQ</li>
-            </ul>
-          </section>
-        </section>
-
-        <section>
-          <section>
-            <h2>Deploy the Apps</h2>
-            <pre><code>rake prometheus:setup</code></pre>
-            <p>Use Capistrano to setup and deploy the apps</p>
-          </section>
-
-          <section>
-            <h3>Currently deploys</h3>
-            <ul>
-              <li class="fragment">batcave</li>
-              <li class="fragment">abacus</li>
-              <li class="fragment">amigo</li>
-              <li class="fragment">persona</li>
-              <li class="fragment">grunt</li>
-              <li class="fragment">toolbox</li>
-              <li class="fragment">firefly</li>
-              <li class="fragment">synchronicity</li>
-              <li class="fragment">ballista</li>
-              <li class="fragment">bullseye</li>
-              <li class="fragment">wormhole</li>
-            </ul>
-          </section>
-        </section>
-      -->
       </div>
 
       <!-- The navigational controls UI -->
