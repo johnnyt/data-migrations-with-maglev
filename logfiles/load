@@ -1,0 +1,17 @@
+#!/usr/bin/env maglev-ruby
+require './lib/log_reader'
+require './lib/worker'
+
+puts "Store size: #{LogLine.store.size}"
+
+#Maglev.persistent do
+#LogLine.store << LogLine.new('foo')
+#end
+#Maglev.commit_transaction
+
+Dir['./data/haproxy1*'].each do |filename|
+  puts "Processing #{filename}"
+  worker = Worker.new(filename)
+  worker.process_file
+  puts "Store size: #{LogLine.store.size}"
+end

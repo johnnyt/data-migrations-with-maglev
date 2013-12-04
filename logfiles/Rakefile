@@ -1,0 +1,26 @@
+task :default => :commit
+
+desc "Commit the source code"
+task :commit do
+  sh %{ maglev-ruby -Mcommit -Ilib -e 'load "log_line.rb"' }
+end
+
+desc "Spin up workers to add lines"
+task :work do
+  num = ENV['NUM_WORKERS'] || 2
+  puts "Running #{num} workers"
+  start_time = Time.now
+  system "seq #{num} | parallel -j0 ./work"
+  puts "Took #{Time.now - start_time} seconds"
+  system %q@ maglev-ruby -e 'puts "Store size: #{LogLine.store.size}"' @
+end
+
+desc "Spin up workers to add lines"
+task :work_threads do
+  num = ENV['NUM_WORKERS'] || 2
+  puts "Running #{num} workers"
+  start_time = Time.now
+  system "maglev-ruby work_threads #{num}"
+  puts "Took #{Time.now - start_time} seconds"
+  system %q@ maglev-ruby -e 'puts "Store size: #{LogLine.store.size}"' @
+end
